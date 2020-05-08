@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class = "row resultRow">
+    {% for Drug in  object_list %}
+    <div class = "col-lg-3">
+        <div class = "card">
+            <img class = "card-img-top" src = "/media/{{Drug.Preview}}">
+            <div class = "card-body">
+                <div class = "row justify-content-center">
+                        <h5 class = "card-title">{{Drug.Drug_name}}</h5>
+                </div>
+                <p class = "card-text">
+                    Manufactured by: {{Drug.Drug_Manufacturer}}
+                </p>
+                <hr>
+                <p class = "card-text">
+                    Type: {{Drug.Drug_type}} 
+                </p>
+                <hr>
+                <p class = "card-text">
+                    Expiry_Date:  {{Drug.Drug_Expiry}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+   
+    {% endfor %}
+</div>
+{% endblock content %}
+    

@@ -1,0 +1,54 @@
+body {
+    background-image: url('../Image/BG2.jpg');
+    background-position: bottom;
+    background-size:
+    background-repeat: repeat;
+}
+#menuPlace {
+    margin-left: 20px;
+    margin-top: 20rem;
+}
+#menuPlace li {
+    margin-top: 25px;
+    font-family: "Montserrat";
+    font-size: 15px;
+    color: white;
+}
+#menuPlace > li > a > i {
+    color: white;
+    margin-right: 25px;
+} 
+#menuPlace > li > a > p {
+    font-weight: 400;
+    color: white;
+}
+#sidebar {
+    background-color: #506bff !important;
+    height: 100vh;
+}
+#TopMenu {
+   
+}
+#TopMenu > div > p {
+    font-family: "Open sans";
+    font-size: 25px;
+    font-weight: 400;
+    text-align: center;
+}
+#TopMenu h1 {
+    font-family: "Montserrat" !important;
+    margin-left: 30%;
+    color: black;
+}
+#menuPlace > li > a:hover i{
+    color: black;
+}
+#menuPlace > li > a:hover p{
+    color: black;
+}
+#infoRow {
+    padding-top: 5%;
+}
+.resultRow {
+    padding-top: 5%;
+}

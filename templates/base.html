@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>My Pharmacy Page</title>
+    <link rel = "stylesheet" href = "{% static '/css/bootstrap.min.css' %}"> 
+   <link rel = "stylesheet" href = "{% static '/css/mdb.min.css' %}"> 
+    <link rel = "stylesheet" href = "{% static '/css/Config.css'%}">
+    <link rel = "stylesheet" href = "{% static '/css/all.css' %}">
+    <link rel = "stylesheet" href = "{% static '/css/fontawesome.css' %}">
+</head>
+<body>
+    <div class = "container-fluid" style="padding:0% !important;">
+        <div class = "col-lg-1 col-md-2 col-sm-12 col-xs-12 float-left" id = "sidebar">
+             <div id = "menuContainer">
+                  <ul class = "navbar-nav" id = "menuPlace">
+                      <li class = "nav-item">
+                          <a  href = "{% url 'home' %}" class = "nav-link"> <i class = "fas fa-2x fa-home"></i><p>Home</p></a>
+                      </li>
+                      <li class = "nav-item">
+                        <a href = "{% url 'login' %}" class = "nav-link"> <i class = "fas  fa-2x fa-user"></i><p>Login</p></a>
+                    </li>
+                    <li class = "nav-item">
+                        <a href = "{% url 'about' %}" class = "nav-link"> <i class = "fas fa-2x  fa-newspaper"></i><p>About</p></a>
+                    </li>
+                    <li class = "nav-item">
+                        <a href = "{% url 'contact' %}" class = "nav-link"> <i class = "fas fa-2x fa-calendar"></i><p>Contact</p></a>
+                    </li>
+                  </ul>
+             </div>
+        </div>
+        <div class = "col-lg-11# col-md-10 col-xs-12 col-sm-12 float-right">
+            {% block content %}
+                
+            {% endblock content %}
+                
+        </div>
+    </div>
+    
+</body>

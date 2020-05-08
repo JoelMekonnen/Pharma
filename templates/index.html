@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class = "container" style="padding:0%;">
+       <div id = "TopMenu">
+          <!--- <h1 class = "h1"> Sudo Pharmacy </h1> -->
+           <div class = "row justify-content-center">
+               <p> Welcome to Sudo Pharmacy an online pharmacy to deliver quality products to our users. you can search for over
+                  5,000 drugs to be delivered where you are when you need it. </p>
+           </div>
+           <div class = "row justify-content-center">
+               <div class = "col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <form action = "{% url 'search' %}">
+                    <div class = "md-form input-with-pre-icon">
+                        <i class = "fas fa-search input-prefix"></i>
+                        <input name = "searchText" type = "text" class = "form-control" placeholder = "Search Drug">
+                    </div>
+                    <div class = "row justify-content-center">
+                        <button type = "submit" class = "btn btn-primary btn-md" style = "text-align:center;">search</button>
+                    </div>
+                </form>
+               </div>
+           </div>
+       </div>
+    </div>
+    <div class = "container-fluid" style="padding:0%;">
+        <div class = "row" id = "infoRow">
+            <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
+                <div class = "card card-cascade wider">
+                    <div class = "row justify-content-center">
+                        <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon1.png' %}">
+                    </div>
+                   <div class = "card-body">
+                       <h5 class = "card-title" style = "text-align:center">Login</h5>
+                       <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">Login to order, and buy drugs. if you have an account we have 50% discount to our members.</p>
+                       <div class = "row justify-content-center">
+                        <a href = "#"  style = "text-align:center" class = "btn btn-primary">Login</a>
+                       </div>
+                   </div>
+                </div>
+            </div>
+            <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
+               <div class = "card">
+                <div class = "row justify-content-center">
+                    <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon2.png' %}">
+                </div>
+                  <div class = "card-body">
+                      <h5 class = "card-title" style = "text-align:center">Online Pharmacy</h5>
+                      <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">if you don't have an account please signup to become a member and get premium services from us.</p>
+                      <div class = "row justify-content-center">
+                        <a href = "#"  style = "text-align:center" class = "btn btn-primary">Signup</a>
+                       </div>
+                  </div>
+               </div>
+           </div>
+           <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
+             <div class = "card card-cascade wider">
+                <div class = "row justify-content-center">
+                    <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon3.png' %}">
+                </div>
+               <div class = "card-body">
+                   <h5 class = "card-title" style = "text-align:center">Online Pharmacy</h5>
+                   <p class = "card-text" style = "font-family:'Open Sans';text-align:center;">if you own a pharmacy and want to incorporate our system contact us here.</p>
+                   <div class = "row justify-content-center">
+                    <a href = "#"  style = "text-align:center" class = "btn btn-primary">Contact</a>
+                   </div>
+               </div>
+             </div>
+          </div>
+        </div>
+    </div>
+{% endblock content %}
+    
