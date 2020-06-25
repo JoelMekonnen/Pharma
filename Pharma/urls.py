@@ -19,6 +19,9 @@ from django.conf.urls.static import static
 from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('PharmaClients.urls'))
+    path('', include('PharmaClients.urls')),
+    path('Login/', include('django.contrib.auth.urls'), name='login'),
+    path('Accounts/', include('User.urls'), name='account'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

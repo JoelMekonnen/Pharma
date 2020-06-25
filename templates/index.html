@@ -1,73 +1,113 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class = "container" style="padding:0%;">
-       <div id = "TopMenu">
-          <!--- <h1 class = "h1"> Sudo Pharmacy </h1> -->
-           <div class = "row justify-content-center">
-               <p> Welcome to Sudo Pharmacy an online pharmacy to deliver quality products to our users. you can search for over
-                  5,000 drugs to be delivered where you are when you need it. </p>
-           </div>
-           <div class = "row justify-content-center">
-               <div class = "col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                <form action = "{% url 'search' %}">
-                    <div class = "md-form input-with-pre-icon">
-                        <i class = "fas fa-search input-prefix"></i>
-                        <input name = "searchText" type = "text" class = "form-control" placeholder = "Search Drug">
-                    </div>
-                    <div class = "row justify-content-center">
-                        <button type = "submit" class = "btn btn-primary btn-md" style = "text-align:center;">search</button>
-                    </div>
-                </form>
-               </div>
-           </div>
-       </div>
+   {% if not user.is_authenticated %}
+     <div class = "container-fluid" style="padding:0%;">
+    <div class = "TopMenu">
+       <!--- <h1 class = "h1"> Sudo Pharmacy </h1> -->
+        <div class = "row justify-content-center">
+            <div class = "col-lg-8 col-md-6 col-sm-6">
+              <h1 class = "BigHeader"> DREW PHARMACY </h1>
+            </div>
+            <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <p> Welcome to Sudo Pharmacy an online pharmacy to deliver quality products to our users. you can search for over
+                    5,000 drugs to be delivered where you are when you need it. 
+                </p>
+                <div class = "row justify-content-center">
+                  <button class = "btn pink" style = "color: white !important;">Get started</button>
+                </div>
+            </div> 
+      </div>
+      
     </div>
-    <div class = "container-fluid" style="padding:0%;">
-        <div class = "row" id = "infoRow">
-            <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
-                <div class = "card card-cascade wider">
+     </div>
+     <div class = "container-fluid" style="padding:0%;">
+
+     <div class = "row" id = "infoRow">
+         <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12">
+             <div class = "card  myCard  bg-transparent">
+                 <div class = "row justify-content-center">
+                     <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon1.png' %}">
+                 </div>
+                <div class = "card-body">
+                    <h5 class = "card-title" style = "text-align:center">Login</h5>
+                    <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">Login to order, and buy drugs. if you have an account we have 50% discount to our members.</p>
                     <div class = "row justify-content-center">
-                        <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon1.png' %}">
+                     <a href = "{% url 'login' %}"  style = "text-align:center;color:white;" class = "btn pink">Login</a>
                     </div>
-                   <div class = "card-body">
-                       <h5 class = "card-title" style = "text-align:center">Login</h5>
-                       <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">Login to order, and buy drugs. if you have an account we have 50% discount to our members.</p>
-                       <div class = "row justify-content-center">
-                        <a href = "#"  style = "text-align:center" class = "btn btn-primary">Login</a>
-                       </div>
-                   </div>
+                </div>
+             </div>
+         </div>
+         <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class = "card myCard  bg-transparent">
+             <div class = "row justify-content-center">
+                 <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon2.png' %}">
+             </div>
+               <div class = "card-body">
+                   <h5 class = "card-title" style = "text-align:center">Signup</h5>
+                   <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">if you don't have an account please signup to become a member and get premium services from us.</p>
+                   <div class = "row justify-content-center">
+                     <a href = "{% url 'signup' %}"  style = "text-align:center;color:white;" class = "btn pink">Signup</a>
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class = "card bg-transparent myCard">
+             <div class = "row justify-content-center">
+                 <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon3.png' %}">
+             </div>
+            <div class = "card-body">
+                <h5 class = "card-title" style = "text-align:center">Online Pharmacy</h5>
+                <p class = "card-text" style = "font-family:'Open Sans';text-align:center;">if you own a pharmacy and want to incorporate our system contact us here.</p>
+                <div class = "row justify-content-center">
+                 <a href = "#"  style = "text-align:center;color:white;" class = "btn pink">Contact</a>
                 </div>
             </div>
-            <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
-               <div class = "card">
-                <div class = "row justify-content-center">
-                    <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon2.png' %}">
-                </div>
-                  <div class = "card-body">
-                      <h5 class = "card-title" style = "text-align:center">Online Pharmacy</h5>
-                      <p style = "font-family:'Open Sans';text-align:center;" class = "card-text">if you don't have an account please signup to become a member and get premium services from us.</p>
-                      <div class = "row justify-content-center">
-                        <a href = "#"  style = "text-align:center" class = "btn btn-primary">Signup</a>
-                       </div>
-                  </div>
-               </div>
-           </div>
-           <div class = "col-lg-4 col-md-4 col-sm-12 col-xs-12" style = "padding:5%;">
-             <div class = "card card-cascade wider">
-                <div class = "row justify-content-center">
-                    <img class = "card-img-top w-25 h-25" src = "{% static 'Image/icon3.png' %}">
-                </div>
-               <div class = "card-body">
-                   <h5 class = "card-title" style = "text-align:center">Online Pharmacy</h5>
-                   <p class = "card-text" style = "font-family:'Open Sans';text-align:center;">if you own a pharmacy and want to incorporate our system contact us here.</p>
-                   <div class = "row justify-content-center">
-                    <a href = "#"  style = "text-align:center" class = "btn btn-primary">Contact</a>
-                   </div>
-               </div>
-             </div>
           </div>
+       </div>
+     </div> 
+     <div class = "row trialBG">
+       
+     </div>
+     </div>
+    {% else %}
+      {% include 'snippets/AccountHeader.html' %}
+      <div class = "container-fluid">
+        <div class = "row justify-content-center scroll">
+          {% for Drug in object_list %}
+             <div class = "col-lg-4 col-md-6 col-sm-12">
+                <div class = "card">
+                     <!--<img src = "/media/{{Drug.Preview}}" class = "card-img-top img-responsive"> -->
+                     <div class = "card-body mainCard">
+                       <h3 class = "card-title"> {{Drug.Drug_name}} <span class="badge badge-secondary ml-auto">New</span></h3>
+                       <hr>
+                       <p class = "card-text lead"> <span class = "material-icons" style="display:inline;margin-right:24px;">verified_user</span>Manufactured: {{Drug.Drug_Manufacturer}}</p>
+                       <hr>
+                       <p class = "card-text lead"> <span class = "material-icons" style="display:inline;margin-right:24px;">attach_money</span>price: {{Drug.price}} birr</p>
+                       <hr>
+                       <div class = "row justify-content-center">
+                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-cart-plus"></i></button>
+                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-credit-card"></i></button>
+                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-arrow-right"></i></button>
+                       </div>
+                     </div>
+                </div>
+            </div>
+          {% endfor %}
         </div>
-    </div>
+      </div>
+   {% endif %}
 {% endblock content %}
+
+{% block SecondContent %}
+  {% if user.is_authenticated %}
+      <div class = "row SecondContent justify-content-center ml-auto">
+             <h1><p>Latest News and Updates</p></h1>
+      </div>
+  {% endif %}
+    
+    
+{% endblock SecondContent %}
+  
     

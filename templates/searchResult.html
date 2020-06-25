@@ -8,19 +8,25 @@
             <img class = "card-img-top" src = "/media/{{Drug.Preview}}">
             <div class = "card-body">
                 <div class = "row justify-content-center">
-                        <h5 class = "card-title">{{Drug.Drug_name}}</h5>
+                        <h5 class = "card-title"><i class = "fas fa-pills"></i> {{Drug.Drug_name}}</h5>
                 </div>
                 <p class = "card-text">
-                    Manufactured by: {{Drug.Drug_Manufacturer}}
+                   <span class = "material-icons">settings</span> Manufactured by: {{Drug.Drug_Manufacturer}}
                 </p>
                 <hr>
                 <p class = "card-text">
-                    Type: {{Drug.Drug_type}} 
+                   <span class = "material-icons md-36">bubble_chart</span> Type: {{Drug.Drug_type}} 
                 </p>
                 <hr>
                 <p class = "card-text">
-                    Expiry_Date:  {{Drug.Drug_Expiry}}
+                   <i class = "far fa-clock"></i> Expiry_Date:  {{Drug.Drug_Expiry}}
                 </p>
+                <hr>
+                <div class = "row justify-content-center">
+                    <button class = "btn rounded blue-gradient"><i class = "fas fa-2x fa-cart-plus"></i></button>
+                    <button class = "btn rounded blue-gradient"><i class = "fas fa-2x fa-credit-card"></i></button>
+                    <button class = "btn rounded blue-gradient"><i class = "fas fa-2x fa-arrow-right"></i></button>
+                </div>
             </div>
         </div>
 

@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<div class = "ProfileContainer">
+         {% include 'snippets/AccountHeader.html' %}
+         <div class = "container">
+             <div class = "card" style = "background-color:#383e39; margin-top:5%;">
+                 <div class = "card-body">
+                     <hr>
+                    <div class = "row  UserContent">
+                       <span class = "material-icons" style="font-size:36px;margin-right:36px;">assignment_ind</span> <p>Full Name: {{user.first_name}} {{user.last_name}}</p>
+                    </div>
+                    <hr>
+                    <div class = "row  UserContent">
+                        <span class = "material-icons" style="font-size:36px;margin-right:36px;">account_circle</span><p>Username: {{user.username}}</p>
+                    </div>
+                    <hr>
+                    <div class = "row  UserContent">
+                        <span class = "material-icons" style="font-size:36px;margin-right:36px;">mail</span><p>Email: {{user.email}}</p>
+                    </div>
+                    <hr>
+                    <div class = "row  UserContent">
+                        <span class = "material-icons" style="font-size:36px;margin-right:36px;">tag_faces</span> <p>Bio: {{user.profile.Bio}}</p>
+                    </div>
+                    <hr>
+                    <div class = "row  UserContent">
+                        <span class = "material-icons" style="font-size:36px;margin-right:36px;">add_location</span> <p>Address: {{user.profile.Address}}</p>
+                    </div>
+                    <hr>
+                    <div class = "row  UserContent">
+                        <span class = "material-icons" style="font-size:36px;margin-right:36px;">date_range</span><p>Birth date: {{user.profile.Birth_Date}}</p>
+                    </div>
+                    <hr>
+                   
+                 </div>
+             </div>
+         </div>
+     </div>
+{% endblock content %}
+    

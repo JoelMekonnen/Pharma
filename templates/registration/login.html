@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load myfilters %}
+<div class = "container-fluid p-0">
+    <div class = "TopMenu">
+        <!--- <h1 class = "h1"> Sudo Pharmacy </h1> -->
+         <div class = "row justify-content-center">
+             <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                 <p> Login to Sudo pharmacy to order and buy drugs, we have all prescription drugs available and ready to serve your health needs 
+                 </p>
+             </div> 
+       </div>
+      </div>
+       <div class = "row justify-content-center">
+        <div class = "col-lg-4 col-md-6 col-sm-12 col-xs-12" id = "loginCard">
+            <div class = "card">
+               <img class = "card-img-top  img-responsive" src = "{% static 'Image/Login.jpg' %}" > 
+               <div class = "card-body">
+                  <h2 class = "h2 card-title" style = "font-family:'source sans pro' !important;">Login</h2>
+                  <form method = "POST">
+                     {% csrf_token %}
+                     <div class = "form-group">
+                        {%placeHolder form.username 'username' 'form-control' %}
+                     </div>
+                     <div class = "form-group">
+                        {%placeHolder form.password 'password' 'form-control' %}
+                     </div>
+                     <button type = "submit" class = "btn blue-gradient">Login</button>
+                  </form>
+               </div>
+            </div>
+        </div>
+</div>
+{% endblock content %}

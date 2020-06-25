@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% load myfilters %}
+   <div class = "container-fluid" style ="padding:0px;">
+      <div class = "row ">
+         <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12 p-5" style="margin-top: 10%;height: 50%;">
+            <div class = "row justify-content-center">
+               <img src = "{% static 'Image/icon2.png' %}" class = "w-5 h-5">
+            </div>
+            <h1 class = "h1" style = "font-family:'source sans pro' !important;text-align:center;color:#e83e88;">Signup and become a part of us</h1>
+            <p style="text-align:center; font-family:'montserrat' !important;font-weight: 400;color:white !important;" class = "lead">
+               Signup and become part of a large pharmacy system. By signing up you agree to the terms and conditions. you can also register as a regular user to help us know a lot about you</p>
+         </div>
+         <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12" id = "formContain">
+            <div class = "card"> 
+               <div class = "card-body">
+                  <h2 class = "h2 card-title" style = "font-family:'source sans pro' !important;color:white;">Signup</h2>
+                  <form class = "md-form" method = "POST">
+                     {% csrf_token %}
+                     <div class = "form-group">
+                        {%placeHolder form.username 'username' 'form-control signup' %}
+                     </div>
+                     <div class = "form-group">
+                        {%placeHolder form.password 'password' 'form-control signup' %}
+                     </div>
+                     <div class = "form-group">
+                        {%placeHolder form.first_name 'First Name' 'form-control signup' %}
+                     </div>
+                     <div class = "form-group">
+                        {%placeHolder form.last_name 'Last Name' 'form-control signup' %}
+                     </div>
+                     <div class = "form-group">
+                        {%placeHolder form.email 'Email' 'form-control signup' %}
+                     </div>
+                     <button type = "submit" class = "btn pink">Signup</button>
+                  </form>
+               </div>
+            </div>
+            
+         </div>
+      </div>
+   </div>
+   
+{% endblock content %}
+    

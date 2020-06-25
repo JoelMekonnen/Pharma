@@ -1,39 +1,61 @@
-body {
-    background-image: url('../Image/BG2.jpg');
+html {
+    font-size: 16px;
+}
+.body {
+    background-image:url("../Image/BG9.jpg");
+    background-color: white;
+    background-position: center;
+    background-size: cover;
     background-position: bottom;
-    background-size:
-    background-repeat: repeat;
+    height: auto;
 }
 #menuPlace {
-    margin-left: 20px;
-    margin-top: 20rem;
+
 }
 #menuPlace li {
     margin-top: 25px;
     font-family: "Montserrat";
     font-size: 15px;
     color: white;
+    margin-left: 25px;
 }
 #menuPlace > li > a > i {
     color: white;
     margin-right: 25px;
-} 
+}
+.BigHeader {
+    color:#e83e8c;
+    font-size: 3.75rem !important;
+    font-family: "playfair display";
+    text-align:center;
+    font-weight: 600;
+    
+}
 #menuPlace > li > a > p {
     font-weight: 400;
     color: white;
 }
-#sidebar {
-    background-color: #506bff !important;
-    height: 100vh;
+.card-text{
+    color: black !important;
 }
-#TopMenu {
+#sidebar {
+    /*background-color: #506bff !important;*/
+    
+    
+}
+.TopMenu {
+     margin-top: 5%;
+}
+.TopMenu > div {
+    /*background-color:rgba(255, 255, 255, 0.8);*/
    
 }
-#TopMenu > div > p {
+.TopMenu > div > div > p {
     font-family: "Open sans";
     font-size: 25px;
     font-weight: 400;
     text-align: center;
+    color: white;
 }
 #TopMenu h1 {
     font-family: "Montserrat" !important;
@@ -47,8 +69,131 @@ body {
     color: black;
 }
 #infoRow {
-    padding-top: 5%;
+  margin-top:30px;
+  background-size: cover;
+  background-attachment:fixed;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top:3%;
+  padding-bottom: 3%;
 }
+#infoRow
 .resultRow {
     padding-top: 5%;
+}
+#formContain {
+   padding:10%;
+}
+.signup::placeholder{
+    font-family: "Montserrat";
+    color: white;
+    font-size:15px;
+}
+.myCard {
+    box-shadow: none !important;
+    border-right: solid;
+    border-width: 1px;
+    border-color: #e83e88;
+}
+.myCard > .card-body > .card-title {
+    color:white !important;
+    font-size: 30px;
+    font-weight: 600;
+}
+.myCard > .card-body > .card-text {
+     font-size: 20px !important;
+     font-weight: 400;
+     color: white !important;
+}
+.profileItem a {
+    color: white !important;
+    font-family: "Montserrat";
+    font-size: 20px;
+    color: white;
+    font-weight: 400;
+}
+.profileItem > a > span:hover {
+    color: black;
+}
+.profileItem > a > span {
+    font-size: 36px;
+    margin-right: 36px;
+}
+.scroll {
+    display:flex;
+    flex-wrap: nowrap;
+    overflow-x:auto;
+    margin-top: 100px;
+    padding: 3%;
+}
+.scroll .card {
+    background-color: transparent !important;
+    box-shadow: none;
+}  
+.scroll > div {
+    padding: 2%;
+}
+.scroll .card .card-img-top{
+    border-top-right-radius:50px;
+    border-top-left-radius:50px;
+    height: 200px;
+}
+.scroll::-webkit-scrollbar {
+    display: none;
+}
+.scroll::-scrollbar {
+    display:none;
+}
+.mainCard h3 {
+    font-family: "Source sans pro";
+    text-align: center;
+    color:white;
+}
+.mainCard p {
+    font-family: "Source sans pro";
+    font-size: 24px !important;
+    /*color:#e91e63 !important;*/
+    line-height: 1;
+    color:white !important;
+}
+#formContain .card {
+    background-color:transparent !important;
+    box-shadow: none;
+}
+#loginCard {
+    padding: 3%;
+}
+.mainCard {
+    border-color: #e83e88;
+    border-right-style:solid;
+    border-width: 1px;
+}
+
+.SecondContent {
+    height:15vh;
+    background-color: #99BFA3;
+    color:white;
+
+}
+.SecondContent h1 {
+    font-family: Montserrat !important; 
+}
+.ProfileContainer {
+    height:100vh !important;
+}
+.UserContent p {
+    font-family: "Montserrat";
+    font-size: 1.5rem;
+    color:white;
+}
+.UserContent {
+    margin-left:30%;
+}
+.UserContent span {
+    color:#e83e88;
+}
+.trialBG {
+    width:100vw;
+    height:100vh !important;
+    background-image:url("../Image/hh.png");
 }

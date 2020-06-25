@@ -1,0 +1,27 @@
+<div class = "container-fluid"  style="padding:0%;">
+    <div class = "row">
+        <div class = "col-lg-12 col-md-12">
+          <nav class="navbar navbar-expand-lg bg-transparent" style="box-shadow:none !important;">
+              <div class = "navbar-brand"> </div>
+                 <ul class = "navbar-nav mx-auto" style="color:white;">
+                     
+                     <li class = "nav-item profileItem">
+                       <a href = "{% url 'Profile' %}" class = "nav-link"><span class = "material-icons">account_circle</span></a>
+                     </li>
+                     <li class = "nav-item profileItem">
+                       <a href = '#' class = "nav-link"><span class = "material-icons">build</span></a>
+                     </li>
+                     <li class = "nav-item profileItem">
+                      <a href = '#' class = "nav-link"><span class = "material-icons">bookmark</span></a>
+                    </li>
+                    <li class = "nav-item profileItem">
+                      <a href = '#' class = "nav-link"><span class = "material-icons">add_shopping_cart</span></a>
+                    </li>
+                    <li class = "nav-item profileItem">
+                      <a href = "{% url 'Edit' user.profile.pk %}" class = "nav-link"><span class = "material-icons">create</span></a>
+                    </li>
+                 </ul>
+          </nav>
+        </div>
+    </div>
+ </div>
