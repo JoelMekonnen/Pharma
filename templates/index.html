@@ -75,7 +75,7 @@
       {% include 'snippets/AccountHeader.html' %}
       <div class = "container-fluid">
         <div class = "row justify-content-center scroll">
-          {% for Drug in object_list %}
+          {% for Drug in DrugList %}
              <div class = "col-lg-4 col-md-6 col-sm-12">
                 <div class = "card">
                      <!--<img src = "/media/{{Drug.Preview}}" class = "card-img-top img-responsive"> -->
@@ -87,9 +87,9 @@
                        <p class = "card-text lead"> <span class = "material-icons" style="display:inline;margin-right:24px;">attach_money</span>price: {{Drug.price}} birr</p>
                        <hr>
                        <div class = "row justify-content-center">
-                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-cart-plus"></i></button>
-                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-credit-card"></i></button>
-                        <button class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-arrow-right"></i></button>
+                        <a class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-cart-plus"></i></a>
+                        <a  href = "{% url 'Order' Drug.id  %}" class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-credit-card"></i></a>
+                        <a class = "btn rounded pink" style ="color:white !important;"><i class = "fas fa-2x fa-arrow-right"></i></a>
                        </div>
                      </div>
                 </div>
@@ -99,15 +99,87 @@
       </div>
    {% endif %}
 {% endblock content %}
-
 {% block SecondContent %}
   {% if user.is_authenticated %}
-      <div class = "row SecondContent justify-content-center ml-auto">
-             <h1><p>Latest News and Updates</p></h1>
+    {% if display %}
+    <div class = "container">
+      <div class = "row justify-content-center">
+          <h5 style="font-family:'Montserrat'; font-size:36px; font-weight:500; margin-top:5%;" > Transaction History </h5>
       </div>
-  {% endif %}
-    
-    
+    </div>
+    <div class = "container-fluid historyRow">
+        {% for order in history %}
+            <div class = "container" style = "padding:2%;">
+              <div class = "row">
+                  <div class = "col-lg-3">
+                      <img src = "media/{{order.Drug_name.Preview}}" class = "rounded-circle" width = 200px height = 200>
+                  </div>
+                  <div class = "col-lg-9">
+                      <div class = "row">
+                          <h1 style = "font-family:'Open Sans'; font-size:30px;">{{order.Drug_name.Drug_name}}</h1>
+                      </div>
+                      <div class = "row">
+                          <div class = "col-lg-6 transInfo">
+                                <p>Order Date:{{order.Order_Date}}</p>
+                                <p>Quantiy:{{order.Quantity}}</p>
+                                <p>Total Price: {{order.TotalPrice}}</p>
+                          </div>
+                          <div class = "col-lg-6 transInfo">
+                                <p>Country:{{order.Deliveries.Country}}</p>
+                                <p>City: {{order.Deliveries.City}}</p>
+                                <p>Street: {{order.Deliveries.Street_Name}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <hr style = "margin-top:6%;">
+            </div>
+          {% endfor %}
+          <div class = "row justify-content-center">
+             <button class = "btn green" style="color:white;">More</button>
+          </div>
+          {% else %}
+                <div class = "row justify-content-center">
+                    <h1>No Transactions</h1>
+                </div> 
+            {% endif %}
+      {% else %}
+      <div class = "container-fluid" style="margin-bottom:5%;">
+          <div class = "row">
+             <div class = "col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                  <img src="{% static 'Image/Dev.png' %}" width=400px height=400px style = "margin-left:50%;margin-top:50%;"/>
+             </div>
+             <div class = "col-lg-8 col-md-6 col-sm-12 col-xs-12">
+                  <div class = "row justify-content-center">
+                    <h1 style="font-size:50px;margin-top:25%;color: #e73a5e;font-family: 'montserrat';font-weight: 700;">Drew Pharmacy android app</h1>
+                  </div>
+                  <div class = "row justify-content-center">
+                    <div class = "col-lg-7 col-sm-12 col-md-8">
+                      <p style="text-align:center;font-family: 'source sans pro';font-size: 23px;">Download our android app and get the latest update on your phone. Order us any amount on the go and we will deliver your product at your door steps.Download our android app and get the latest update on your phone. Order us any amount on the go and we will deliver your product at your door steps.Download our android app and get the latest update on your phone. Order us any amount on the go and we will deliver your product at your door steps.</p>
+                    </div>
+                  </div>
+                  <div class = "row justify-content-center">
+                     <button class = "btn pink" style="color:white;">Download</button>
+                  </div>
+             </div>
+             <div class = "row justify-content-center" style = "background-color:#6a6a6a;margin-top:10%;">
+              <div class = "col-lg-8 col-md-6 col-sm-12 col-xs-12" style = "margin:10%;">
+                   <div class = "row justify-content-center">
+                     <h1 style="font-size:50px;color: white;font-family: 'montserrat';font-weight: 700;">Drew Pharmacy Delivery</h1>
+                   </div>
+                   <div class = "row justify-content-center">
+                     <div class = "col-lg-10 col-sm-12 col-md-8">
+                       <p style="text-align:center;font-family: 'source sans pro';font-size: 23px;color:white;">Get the fastest delivery service, we deliver our products anywhere and everywhere just signup.Get the fastest delivery service, we deliver our products anywhere and everywhere just signup.Get the fastest delivery service, we deliver our products anywhere and everywhere just signup.Get the fastest delivery service, we deliver our products anywhere and everywhere just signup.</p>
+                     </div>
+                   </div>
+                  
+              </div>
+          </div>
+      </div>
+      
+     {% endif %}
+    </div>
+   
 {% endblock SecondContent %}
   
     

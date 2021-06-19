@@ -1,0 +1,5 @@
+ <span class = "fas fa-pills" style="font-size:36px;margin-right:36px;"></span><p>Drug: {{DrugInfo.Drug_name}}</p>
+ <span class = "material-icons" style="font-size:36px;margin-right:36px;">perm_identity</span><p>Manufacturer: {{DrugInfo.Drug_Manufacturer}}</p>
+ <span class = "material-icons" style="font-size:36px;margin-right:36px;">dns</span><p>Type: {{DrugInfo.Drug_type}}</p>
+ <span class = "material-icons" style="font-size:36px;margin-right:36px;">date_range</span> <p>Expiry_Date: {{DrugInfo.Drug_Expiry}}</p>
+ <span class = "material-icons" style="font-size:36px;margin-right:36px;">payment</span> <p>price: {{DrugInfo.price}}birr</p>

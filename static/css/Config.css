@@ -8,6 +8,7 @@ html {
     background-size: cover;
     background-position: bottom;
     height: auto;
+
 }
 #menuPlace {
 
@@ -84,10 +85,24 @@ html {
 #formContain {
    padding:10%;
 }
+#OrderContain {
+    
+}
+#OrderContain .card {
+    background-color:transparent !important;
+    box-shadow: none;
+}
 .signup::placeholder{
     font-family: "Montserrat";
     color: white;
     font-size:15px;
+}
+.Order::placeholder{
+    font-family: "Montserrat";
+    font-size:15px;
+}
+.Order {
+    font-family: "Montserrat";
 }
 .myCard {
     box-shadow: none !important;
@@ -168,16 +183,6 @@ html {
     border-right-style:solid;
     border-width: 1px;
 }
-
-.SecondContent {
-    height:15vh;
-    background-color: #99BFA3;
-    color:white;
-
-}
-.SecondContent h1 {
-    font-family: Montserrat !important; 
-}
 .ProfileContainer {
     height:100vh !important;
 }
@@ -192,8 +197,49 @@ html {
 .UserContent span {
     color:#e83e88;
 }
-.trialBG {
+
+.mainWork {
     width:100vw;
-    height:100vh !important;
-    background-image:url("../Image/hh.png");
+    height:auto !important;
 }
+.OrderContent p {
+    font-family: "Montserrat";
+    font-size: 1.2rem;
+    color:white;
+}
+.OrderContent span {
+    color:#e83e88;
+}
+.DrugInfoRow {
+    background-color:#2a2d29;;
+    padding:2%;
+
+}
+.OrderRow > div > label {
+    color: white;
+    font-size: 25px;
+    font-family: "Montserrat";
+    font-weight: 500;
+}
+.OrderRow > div > input {
+    font-size: 25px;
+    font-family: "source sans pro";
+    background-color: #7b2d47;
+    color:white;
+    border: none;
+}
+.OrderRow {
+    margin-top: 25px;
+}
+.OrderContainer > div > form {
+    padding:1%;
+    background-color: #e91e63;
+    border-radius: 15px;
+}
+.historyRow {
+    height: 100vh;
+}
+
+.transInfo p {
+      font-family: 'Source sans pro';
+} 
