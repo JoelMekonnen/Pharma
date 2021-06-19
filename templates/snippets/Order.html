@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load myfilters %}
+   <div class= "mainWork">
+    {% include 'snippets/AccountHeader.html' %}
+    <div class = "OrderContainer">
+       <div class = "container">
+         <hr>
+         <form class = "form" method = "POST">
+            {% csrf_token %}
+            <div class = "form-group row OrderRow">
+               <div class = "col-lg-2">
+                  <label for="DrName" class = "col-form-label">Drug</label>
+               </div>
+               <div class = "col-lg-10">
+                  <input class = "form-control readonly disabled" id = "DrName" type="text" value = "{{DrugInfo.Drug_name}}">
+               </div>
+            </div>
+            <div class = "form-group row OrderRow">
+               <div class = "col-lg-2">
+                  <label for="Manu" class = "col-form-label">Manufacturer:</label>
+               </div>
+               <div class = "col-lg-10">
+                  <input id = "Manu" class = "form-control readonly  disabled" type="text" value = "{{DrugInfo.Drug_Manufacturer}}">
+               </div>
+            </div>
+            <div class = "form-group row OrderRow">
+               <div class = "col-lg-2">
+                  <label for="Type" class = "col-form-label">Type:</label>
+               </div>
+               <div class = "col-lg-10">
+                  <input id = "Type" class = "form-control readonly  disabled" type="text" value = "{{DrugInfo.Drug_type}}">
+               </div>
+            </div>
+            <div class = "form-group row OrderRow">
+               <div class = "col-lg-2">
+                  <label for="date" class = "col-form-label">Expire Date:</label>
+               </div>
+               <div class = "col-lg-10">
+                  <input id = "date" class = "form-control  readonly disabled" type="text" value = "{{DrugInfo.Drug_Expiry}}">
+               </div>
+            </div>
+            <div class = "form-group row OrderRow">
+               <div class = "col-lg-2">
+                  <label  for="price" class = "col-form-label">price: </label>
+               </div>
+               <div class = "col-lg-10">
+                  <input id = "price" class = "form-control readonly  disabled" type="text" value = "{{DrugInfo.price}}birr">
+               </div>
+            </div>
+         </form>
+         <hr>
+   </div>
+   </div>
+   <div class = "container orderCont">
+    <div class = "row">
+      <div class = "col-lg-8 col-md-6 col-sm-12 col-xs-12" id = "OrderContain">
+              <h2 class = "h2 card-title" style = "font-family:'source sans pro' !important;color:white; font-size:45px;">Order</h2>
+              <form class = "form" method = "POST">
+                 {% csrf_token %}
+                 <div class = "form-group">
+                    {%placeHolder form.Quantity 'Qunatity' 'form-control Order' %}
+                 </div>
+                 <div class = "form-group">
+                    {%placeHolder MyForm.Country 'country' 'form-control Order' %}
+                 </div>
+                 <div class = "form-group">
+                    {%placeHolder MyForm.City 'city' 'form-control Order' %}
+                 </div>
+                 <div class = "form-group">
+                    {%placeHolder MyForm.Street_Name 'street name' 'form-control Order' %}
+                 </div>
+                 <div class = "form-group">
+                    {%placeHolder MyForm.House_No 'house number' 'form-control Order' %}
+                 </div>
+                 <button type = "submit" class = "btn pink">Order</button>
+              </form>
+    </div>
+ </div>
+</div>
+</div>
+{% endblock content %}
+
+    
